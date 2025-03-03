@@ -34,10 +34,10 @@ class NeuralNetwork():
             output_delta = output_error * self.sigmoid_derivative(output_layer_activation)
 
             hidden_error2 = output_delta.dot(self.output_weights.T)
-            hidden_delta2 = hidden_error2 * self.sigmoid_derivative(hidden_layer2_activation)  # Sigmoid-Schicht
+            hidden_delta2 = hidden_error2 * self.sigmoid_derivative(hidden_layer2_activation)  
 
             hidden_error1 = hidden_delta2.dot(self.hidden_weights2.T)
-            hidden_delta1 = hidden_error1 * self.relu_derivative(hidden_layer1_activation)  # ReLU-Schicht
+            hidden_delta1 = hidden_error1 * self.relu_derivative(hidden_layer1_activation) 
 
             # updating wegihts
             self.output_weights += hidden_layer2_activation.T.dot(output_delta)
